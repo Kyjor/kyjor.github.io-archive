@@ -38,12 +38,12 @@ const EmblaCarousel = () => {
 
 
 const SectionStyles = styled.section`
-    margin: 4rem;
+    margin: 4%;
     text-align: center;
   
     iframe {
-      width: 60vw;
-      height: 30vw;
+      width: 100%;
+      height: 20%;
       background-color: #1f1f1f;
         box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 
@@ -61,12 +61,14 @@ const FlexContainerStyles = styled.div`
    display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 2%;
+  margin: 2% 7.5%;
 `;
 
 const LeftPanelStyles = styled.div`
-  flex-grow: 3;
+  flex-grow: 2;
   background-color: #454343;
+  flex-basis: 5%;
+
   margin-top: 5%;
   p{
     line-height: 2vw;
@@ -75,8 +77,9 @@ const LeftPanelStyles = styled.div`
   }
 `;
 const RightPanelStyles = styled.div`
-  flex-basis: 75%;
-  flex-grow: 2;
+  flex-grow: 1;
+  flex-basis: 100%;
+
   background-color: #454343;
   margin-left: 5%;
   max-height: 500px;

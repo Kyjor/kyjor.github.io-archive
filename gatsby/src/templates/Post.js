@@ -4,8 +4,16 @@ import Img from 'gatsby-image';
 import { Helmet } from 'react-helmet';
 import SEO from '../components/SEO';
 import BlockContent from '@sanity/block-content-to-react'
+import { DiscussionEmbed } from 'disqus-react';
 
 export default function SinglePostPage({ data: { post } }) {
+
+
+    const disqusShortname = "kyjor";
+    const disqusConfig = {
+        identifier: post.id,
+        title: post.title,
+    };
 
     return (
         <>
@@ -19,6 +27,10 @@ export default function SinglePostPage({ data: { post } }) {
                 <p>{post.description}</p>
                 <BlockContent blocks={post._rawContent}/>
             </div>
+            <div>
+                <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+            </div>
+            
         </div>
         </>
     
