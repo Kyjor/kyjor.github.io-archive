@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.js"],"names":["FourOhFourPage"],"mappings":"2FAAA,wEAEe,SAASA,IACpB,OAAO","file":"component---src-pages-404-js-d908e15cf39312ca34a0.js","sourcesContent":["import React from 'react';\r\n\r\nexport default function FourOhFourPage(){\r\n    return <p>Hey - That page doesn't exist yet</p>\r\n}"],"sourceRoot":""}
