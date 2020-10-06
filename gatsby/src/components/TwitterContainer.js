@@ -13,7 +13,7 @@ const TwitterContainer = () => {
         <a
           className="twitter-timeline"
           data-theme="dark"
-          data-tweet-limit="5"
+          data-tweet-limit="1"
           data-chrome="noheader nofooter noborders"
           href="https://twitter.com/kyjordev"
         >

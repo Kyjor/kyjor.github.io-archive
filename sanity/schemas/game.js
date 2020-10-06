@@ -33,6 +33,12 @@ export default {
 
         },
         {
+            name: 'credits',
+            title: 'Credits',
+            type: 'text',
+            description: 'Who contributed works towards this project and what did they do?',
+        },
+        {
             name: 'description',
             title: 'Description',
             type: 'text',

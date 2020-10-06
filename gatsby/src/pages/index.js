@@ -40,18 +40,25 @@ const EmblaCarousel = () => {
 const SectionStyles = styled.section`
     margin: 4%;
     text-align: center;
-  
+
+    h1{
+      margin-top: 0;
+      margin-bottom: 0.67em;
+    }
     iframe {
       width: 100%;
-      height: 20%;
+      height: 30vw;
       background-color: #1f1f1f;
         box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-
+      border-radius: 1em;
     }
     p{
       background-color: #1f1f1f;
         box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-
+        &:hover {
+       
+            box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 100px 0 rgba(0,0,0,.12);
+        }
     }
     
 `;
@@ -60,14 +67,16 @@ const SectionStyles = styled.section`
 const FlexContainerStyles = styled.div`
    display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 2% 7.5%;
+  justify-content: center;
+  margin: 0 40%;
 `;
 
 const LeftPanelStyles = styled.div`
+  border-radius: 1em;
   flex-grow: 2;
   background-color: #454343;
-  flex-basis: 5%;
+  flex-basis: 75%;
+  min-width: 800px;
 
   margin-top: 5%;
   p{
@@ -77,12 +86,15 @@ const LeftPanelStyles = styled.div`
   }
 `;
 const RightPanelStyles = styled.div`
+  border-radius: 1em;
+
   flex-grow: 1;
-  flex-basis: 100%;
+  flex-basis: 25%;
 
   background-color: #454343;
   margin-left: 5%;
-  max-height: 500px;
+  min-width: 400px;
+  max-height: 1000px;
 `;
 
 const InnerPanelStyles = styled.div`
@@ -94,15 +106,16 @@ const InnerPanelStyles = styled.div`
 `;
 
 const RightPanelListStyles = styled.ul`
-        width: 100%;
-        margin: 0;
+        margin: 0%;
         padding: 3%;
         
         border-left: .3rem solid #9cb3c9;
         list-style: none;
         background-color: #1f1f1f;
         box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-
+        &:hover {
+            border-color: white;
+        }
         li {
           margin-bottom: 1rem;
         }
@@ -304,9 +317,7 @@ export default function HomePage() {
       <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2ID-1lHIjYQ"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
       </SectionStyles>
-      <SectionStyles>
-        <TwitterContainer/>
-      </SectionStyles>
+     
 
     </LeftPanelStyles>
     <RightPanelStyles>
@@ -335,7 +346,9 @@ export default function HomePage() {
             Social Links
           </h2>
           <SocialMediaIcon icon='twitter' link='https://twitter.com/KyjorDev' name='Twitter' />
-
+          <SectionStyles>
+        <TwitterContainer/>
+      </SectionStyles>
       </SectionStyles>
     </RightPanelStyles>
 
