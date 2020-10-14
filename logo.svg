@@ -30,7 +30,7 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Artboard" transform="translate(-898.000000, -83.000000)">
             <g id="Logo" transform="translate(639.000000, 88.000000)">
-                <g id="Pizza-Box" filter="url(#filter-1)" transform="translate(272.999995, -0.000000)">
+                <!-- <g id="Pizza-Box" filter="url(#filter-1)" transform="translate(272.999995, -0.000000)"> -->
                     <rect id="white" fill="#FFFFFF" x="0" y="0" width="342.999994" height="342.999994"></rect>
                     <g id="stripes">
                         <use fill="url(#pattern-3)" fill-rule="evenodd" xlink:href="#path-2"></use>
