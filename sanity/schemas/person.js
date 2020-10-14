@@ -1,4 +1,3 @@
-import { MDLocalPizza as icon } from 'react-icons/md'
 
 export default {
 

@@ -11,7 +11,6 @@ const GlobalStyles = createGlobalStyle`
     --grey: #efefef;
   }
   html {
-    background-image: url(${bg});
     background-size: 450px;
     background-attachment: fixed;
     font-size: 10px;
@@ -66,9 +65,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   hr {
-    border: 0;
-    height: 8px;
-    background-image: url(${stripes});
+    border-top: 4px solid white;
+    border-radius: 5px;
     background-size: 1500px;
   }
 

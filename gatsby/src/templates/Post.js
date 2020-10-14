@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import SEO from '../components/SEO';
 import BlockContent from '@sanity/block-content-to-react'
 import { DiscussionEmbed } from 'disqus-react';
+import PageTopper from '../components/PageTopper/PageTopper';
 
 export default function SinglePostPage({ data: { post } }) {
 
@@ -19,11 +20,13 @@ export default function SinglePostPage({ data: { post } }) {
         <>
         <SEO title={post.title} /> 
         {/* image={game.image?.asset?.fluid?.src} */}
+       
+
         <div>
             <Helmet><title>{post.title}</title></Helmet>
             {/* <Img fluid={game.image.asset.fluid} /> */}
+            <PageTopper title={post.title}/>
             <div>
-                <h2>{post.title}</h2>
                 <p>{post.description}</p>
                 <BlockContent blocks={post._rawContent}/>
             </div>

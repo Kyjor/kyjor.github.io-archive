@@ -6,7 +6,7 @@ export default {
   pathPrefix: '/games',
   siteMetadata: {
     title: `Kyjor Games`,
-    siteUrl: 'https://gatsby.pizza',
+    siteUrl: 'https://kyjor.com',
     description: 'Games by Kyjor',
     twitter: '@kyjordev',
   },

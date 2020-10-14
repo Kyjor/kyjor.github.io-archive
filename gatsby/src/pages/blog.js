@@ -1,7 +1,16 @@
 import React from "react"
+import styled from "styled-components";
 import BlogPostList from "../components/BlogPostList"
 import Layout from "../components/layout"
+import PageTopper from "../components/PageTopper/PageTopper";
 import SEO from "../components/SEO"
+
+const PageStyles = styled.div`
+    margin: 0 auto;
+    display: block;
+    max-width: 700px;
+    margin-top: 5em;
+    margin: auto;`;
 
 
 const BlogPage = ({ data }) => {
@@ -9,8 +18,12 @@ const BlogPage = ({ data }) => {
   return (
     <>
     <SEO title={`Blog`}/>
-            <h1>My blog posts:</h1>
-            <BlogPostList posts={posts}/>
+    <PageTopper title='Blog Posts'/>
+
+    <PageStyles>
+      <BlogPostList posts={posts}/>
+    </PageStyles>
+            
     </>
     
 

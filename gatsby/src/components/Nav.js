@@ -6,11 +6,13 @@ import styled from 'styled-components';
 const NavStyles = styled.nav`
     margin-bottom: 4%;
     width: 100%;
+    color: #454343;
+
     ul {
         width: 50%;
         margin: 0;
         padding: 0;
-        display: grid;
+        display: flex;
         justify-content:end;
         text-align: right;
         list-style: none;
@@ -33,12 +35,14 @@ const NavStyles = styled.nav`
     }
     
 `;
+
+
 export default function Nav (){
     return <NavStyles>
         <ul>
-            <li>
+            {/* <li>
                 <Link to="/support" activeStyle={{ color: "red" }}>Support Me</Link>
-            </li>
+            </li> */}
             <li>
                 <Link to="/contact" activeStyle={{ color: "red" }}>Contact</Link>
             </li>

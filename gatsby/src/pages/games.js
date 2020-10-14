@@ -5,24 +5,32 @@ import Nav from '../components/Nav';
 import GameList from '../components/GameList';
 import SEO from '../components/SEO';
 import styled from 'styled-components';
+import PageTopper from '../components/PageTopper/PageTopper';
 
 
 const SectionStyles = styled.section`
-    margin-left: -.75rem;
-    margin-right: -.75rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 20%;
+
+   
 `;
+
 export default function GamesPage({data}) {
   const games = data.games.nodes;
 
   return (
     <>      
       <SEO title='Games Created By Kyjor' />
+      <PageTopper title='Games Created By Kyjor'/>
+
+     <SectionStyles>
      
-      <GameList games={games}
+       <GameList games={games}
       />
+     </SectionStyles>
+      
     
       
     </>

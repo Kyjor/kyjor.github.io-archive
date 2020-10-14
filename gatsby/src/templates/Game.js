@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Helmet } from 'react-helmet';
 import SEO from '../components/SEO';
+import PageTopper from '../components/PageTopper/PageTopper';
 
 export default function SingleGamePage({ data: { game } }) {
 
@@ -11,6 +12,8 @@ export default function SingleGamePage({ data: { game } }) {
         <SEO title={game.name} image={game.image?.asset?.fluid?.src}/>
         <div>
             <Helmet><title>{game.name}</title></Helmet>
+            <PageTopper title={game.name}/>
+
             <Img fluid={game.image.asset.fluid} />
             <div>
                 <h2>{game.name}</h2>

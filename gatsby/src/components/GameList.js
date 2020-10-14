@@ -31,9 +31,11 @@ const FlexItemStyles = styled.div`
     
 `;
 
-const FlexImageStyles = styled.img`
-     width: 100%;
-    height: 100%;
+const ImageStyles = styled.div`
+     img {
+    max-width: 100%;
+    max-height: 100%;
+}
 `;
 const GameGridStyles = styled.div `
     display: grid;
@@ -47,13 +49,9 @@ const GameStyles = styled.div`
     @supports not(grid-template-row: subgrid){
         --rows: auto auto 1fr;
     }
-    grid-template-rows: var(--rows, subgrid);
-    grid-area: span 3;
-    grid-gap: 1rem;
-    h2,
-    p{
-        margin: 0;
-    }
+    grid-template-columns: 50% 50%;
+   
+   
 `;
 function SingleGame({ game }) {
     return (
@@ -69,17 +67,22 @@ function SingleGame({ game }) {
 function GameSection({game}) {
 
     return (
-        <SectionStyles>
-            <FlexContainerStyles>
-                <FlexItemStyles>
-                    <SingleGame  game={game}/>
-                </FlexItemStyles>
-                <FlexItemStyles>
-                    <GatsbyImage fluid={game.image.asset.fluid} alt={game.name}/>
-                </FlexItemStyles>
-            </FlexContainerStyles>
-        </SectionStyles>
-    )
+        // <SectionStyles>
+        //     <FlexContainerStyles>
+        //         <FlexItemStyles>
+        //             <SingleGame  game={game}/>
+        //         </FlexItemStyles>
+        //         <FlexItemStyles>
+        //             <GatsbyImage fluid={game.image.asset.fluid} alt={game.name}/>
+        //         </FlexItemStyles>
+        //     </FlexContainerStyles>
+        // </SectionStyles>
+        <ImageStyles>
+            <Link to={`/game/${game.slug.current}`}>
+                <GatsbyImage fluid={game.image.asset.fluid} alt={game.name} />
+            </Link>
+        </ImageStyles>
+               )
 
 }
 export default function GameList({ games }) {
@@ -87,10 +90,13 @@ export default function GameList({ games }) {
     return(
         
     <>
-    {games.map((game) => (
-        <GameSection  key={game.id} game={game}/>
+            <GameStyles>
+
+        {games.map((game) => (
+            <GameSection  key={game.id} game={game}/>
                 )
                 )}
+        </GameStyles>
     </>   
     
                 

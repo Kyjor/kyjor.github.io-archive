@@ -50,17 +50,46 @@ const PostStyles = styled.div`
     grid-template-rows: var(--rows, subgrid);
     grid-area: span 3;
     grid-gap: 1rem;
-    h2,
+    h3,
     p{
-        margin: 0;
+        text-align: center;
     }
+`;
+const PostSectionStyles = styled.section`
+margin: 4%;
+text-align: center;
+
+    background-color: #454343;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    &:hover {
+   
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 100px 0 rgba(0,0,0,.12);
+    }
+
+
+
+h1{
+  margin-top: 0;
+  margin-bottom: 0.67em;
+}
+iframe {
+  width: 100%;
+  height: 30vw;
+  background-color: #1f1f1f;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  border-radius: 1em;
+}
+p{
+ 
+}
+
 `;
 function SinglePost({ post }) {
     return (
        
             
-    <div style={{backgroundColor: '#454343', padding: '20px', margin: '20px 0'}}>
-        <Link to={`/blog/${post.slug.current}`}><h2>{post.title}</h2></Link>
+    <div style={{backgroundColor: '#454343', padding: '20px', margin: '20px 0', textAlign: 'center'}}>
+        <Link to={`/blog/${post.slug.current}`}><h3 >{post.title}</h3></Link>
       <small>{post.date}</small>
       <p>{post.description}</p>
     </div>
@@ -74,7 +103,10 @@ function PostSection({post}) {
         <SectionStyles>
             <FlexContainerStyles>
                 <FlexItemStyles>
-                    <SinglePost  post={post}/>
+                    <PostSectionStyles>
+                        <SinglePost  post={post}/>
+                    </PostSectionStyles>
+                    
                 </FlexItemStyles>
                 {/* <FlexItemStyles>
                     <GatsbyImage fluid={post.image.asset.fluid} alt={post.name}/>

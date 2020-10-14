@@ -15,6 +15,6 @@ import client from 'part:@sanity/base/client';
 
 client
   // .delete({ query: '*[!defined(name) && _type == "topping"] ' })
-  .delete({ query: '*[_type == "pizza"] ' })
+  //.delete({ query: '*[_type == "game"] ' })
   .then(console.log)
   .catch(console.error);

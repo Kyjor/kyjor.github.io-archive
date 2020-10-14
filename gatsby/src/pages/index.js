@@ -5,6 +5,8 @@ import { useEmblaCarousel } from 'embla-carousel/react'
 import styled from 'styled-components';
 import SocialMediaIcon from '../components/SocialMediaIcon';
 import TwitterContainer from '../components/TwitterContainer';
+import ImageSlider from '../components/ImageSlider/ImageSlider';
+import PageTopper from '../components/PageTopper/PageTopper';
 
 const viewportCss = {
   overflow: 'hidden',
@@ -16,25 +18,6 @@ const slideCss = {
   position: 'relative',
   minWidth: '100%',
 }
-const EmblaCarousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false })
-
-  useEffect(() => {
-    if (emblaApi) {
-      // Embla API is ready
-    }
-  }, [emblaApi])
-
-  return (
-    <div style={viewportCss} ref={emblaRef}>
-      <div style={containerCss}>
-        <div style={slideCss}>Slide 1</div>
-        <div style={slideCss}>Slide 2</div>
-        <div style={slideCss}>Slide 3</div>
-      </div>
-    </div>
-  )
-}
 
 
 const SectionStyles = styled.section`
@@ -45,24 +28,31 @@ const SectionStyles = styled.section`
       margin-top: 0;
       margin-bottom: 0.67em;
     }
-    iframe {
-      width: 100%;
-      height: 30vw;
-      background-color: #1f1f1f;
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-      border-radius: 1em;
-    }
+    
+
     p{
-      background-color: #1f1f1f;
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-        &:hover {
-       
-            box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 100px 0 rgba(0,0,0,.12);
-        }
+      font-size: 18px;
+      font-weight: 1; 
+      
     }
+  
     
 `;
 
+const ParagraphStyles = styled.p`
+  line-height: 2vw;
+  text-align: center;
+`;
+
+const VideoContainerStyles = styled.div`
+  margin-top: 5em;
+  iframe {
+      width: 100%;
+      height: clamp(30rem, 60vw, 60rem);
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+      border-radius: 1em;
+    }
+`;
   
 const FlexContainerStyles = styled.div`
    display: flex;
@@ -74,7 +64,6 @@ const FlexContainerStyles = styled.div`
 const LeftPanelStyles = styled.div`
   border-radius: 1em;
   flex-grow: 2;
-  background-color: #454343;
   flex-basis: 75%;
   min-width: 800px;
 
@@ -95,15 +84,9 @@ const RightPanelStyles = styled.div`
   margin-left: 5%;
   min-width: 400px;
   max-height: 1000px;
+  right: 0px;
 `;
 
-const InnerPanelStyles = styled.div`
-  
-  margin: 1%;
-  background-color: #1f1f1f;
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-
-`;
 
 const RightPanelListStyles = styled.ul`
         margin: 0%;
@@ -179,148 +162,28 @@ div {
 }
 `;
 
-const SlidesStyles = styled.ul`
-  margin: 0;
-    padding: 0;
-    list-style: none;
 
-ul {
-    margin-left: 1.1rem;
-}
-dl, ol, ul {
-    line-height: 1.6;
-    list-style-position: outside;
-    margin-bottom: 1.25rem;
-}
-dl, h6, ol, ul {
-    font-size: 1rem;
-}
-blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
-    margin: 0;
-    padding: 0;
-}
-dl, ol, p, ul {
-    font-family: inherit;
-}
-*, :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
-ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-}
-`;
-
-const ListStyles = styled.li`
-
-    width: 100%;
-    float: left;
-    margin-right: -100%;
-    position: relative;
-    opacity: 0;
-    display: block;
-    z-index: 1;
-
-.flex-control-nav, .flex-direction-nav, .slides, .slides>li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
-    margin: 0;
-    padding: 0;
-}
-*, :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-dl, ol, ul {
-    line-height: 1.6;
-    list-style-position: outside;
-    margin-bottom: 1.25rem;
-}
-dl, h6, ol, ul {
-    font-size: 1rem;
-}
-dl, ol, p, ul {
-    font-family: inherit;
-}
-ul {
-    list-style-type: disc;
-}
-`;
 export default function HomePage() {
   
   return (
 
     <>
-    <EmblaCarousel/>
-    {/* <RowStyles>
-      <ContainerStyles>
-        <FlexSliderStyles>
-          <SlidesStyles>
-                          <ListStyles>                  
-                                      <a href="https://www.roguelegacy2.com/" target="_self"><img src="https://cellardoorgames.com/wp-content/uploads/2020/08/cdg_site_rl2banner-1.png" alt=""/></a>
-                                </ListStyles>
-                          <ListStyles>                  
-                                      <a href="https://www.fangamer.com/collections/rogue-legacy" target="_self"><img src="https://cellardoorgames.com/wp-content/uploads/2019/08/cdg_site_roguelegacy_banner_merch.png" alt=""/></a>
-                                </ListStyles>
-                          <ListStyles>                  
-                                      <a href="https://www.nintendo.com/en_CA/games/detail/full-metal-furies-switch" target="_self"><img src="https://cellardoorgames.com/wp-content/uploads/2018/11/nintendo_site_header_out.png" alt=""/></a>
-                                </ListStyles>
-                          <ListStyles>                  
-                                      <a href="https://apps.apple.com/us/app/rogue-legacy/id1453189467" target="_self"><img src="https://cellardoorgames.com/wp-content/uploads/2019/08/cdg_site_roguelegacyWE_banner.png" alt=""/></a>
-                                </ListStyles>
-                          <ListStyles>                  
-                                      <a href="http://cellardoorgames.com/our-games/full-metal-furies/" target="_self"><img src="https://cellardoorgames.com/wp-content/uploads/2018/10/fmf_site_header.png" alt=""/></a>
-                                </ListStyles>
-                          <ListStyles>                  
-                                      <a href="http://cellardoorgames.com/our-games/rogue-legacy/" target="_self"><img src="https://cellardoorgames.com/wp-content/uploads/2019/08/cdg_site_roguelegacy_header_up.png" alt=""/></a>
-                                </ListStyles>
-                          <ListStyles>                  
-                                      <a href="http://cellardoorgames.com/our-games/rogue-legacy/" target="_self"><img src="https://cellardoorgames.com/wp-content/uploads/2015/09/header4-970x420.jpg" alt=""/></a>
-                                </ListStyles>
-                      </SlidesStyles>
-          <div class="custom-navigation-slider">
-              <a href="#" class="flex-prev"><div class="fs1" aria-hidden="true" data-icon="&#x34;"></div></a>
-              <a href="#" class="flex-next"><div class="fs1" aria-hidden="true" data-icon="&#x35;"></div></a>
-          </div>
-        </FlexSliderStyles>
-      </ContainerStyles>
-    </RowStyles>
-    */}
+    {/* <ImageSlider/> */}
   
-  
-    <FlexContainerStyles> 
-    <LeftPanelStyles>
-      <SectionStyles>
-        <h1>Welcome to Kyjor Games!</h1>
-        <p>Hey everyone! Welcome to the page for the one-man studio, Kyjor Games. My name is Kyle Conel, and I am a 
+
+        <PageTopper title='Welcome to Kyjor Games!'/>
+        <ParagraphStyles>Hey everyone! Welcome to the page for the one-man studio, Kyjor Games. My name is Kyle Conel, and I am a 
           solo indie game developer with a passion for creating experiences. Here, you will find my past, current and upcoming
-          projects and be up to date on my thoughts in my blog. If you have any questions, feel free to contact me!
-        </p>
-      </SectionStyles>
-      <SectionStyles>
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2ID-1lHIjYQ"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          projects and be up to date on my thoughts in my blog. If you have any questions, feel free to  <Link to="/contact" activeStyle={{ color: "red" }}>contact me</Link>!
+        </ParagraphStyles>
+      <VideoContainerStyles>
+        <iframe  src="https://www.youtube.com/embed/2ID-1lHIjYQ"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </VideoContainerStyles>
+      
 
-      </SectionStyles>
-     
-
-    </LeftPanelStyles>
-    <RightPanelStyles>
+  
+    {/* <RightPanelStyles>
     <SectionStyles>
         <h2>
           Latest Activity
@@ -350,10 +213,8 @@ export default function HomePage() {
         <TwitterContainer/>
       </SectionStyles>
       </SectionStyles>
-    </RightPanelStyles>
+    </RightPanelStyles> */}
 
-    
-    </FlexContainerStyles>
   </>
   );
 

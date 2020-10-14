@@ -1,60 +1,65 @@
 import React from 'react';
+import styled from 'styled-components';
+import PageTopper from '../components/PageTopper/PageTopper';
 import SEO from "../components/SEO"
 
 
 export default function ContactPage(){
     
+  const FormStyles = styled.div`
+    margin: 0 auto;
+    display: block;
+    max-width: 700px;
+    margin-top: 5em;
+    margin: auto;
+    input, select, textarea {
+    display: block;
+    padding: 1em;
+    background-color: #eee;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    border-bottom: 2px solid #eee;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 1.5em;
+    color: black;
+    
+
+}
+textarea {
+  margin: auto;
+    width: 770px;
+    height: 166px;
+}
+  input {
+    margin: auto;
+    width: 770px;
+  }
+  bu{
+    text-align: center;
+  }
+  `;
 
     return (
         <>
             <SEO title={`Contact`}/>
-            <div class="container">
-  <form  action="https://getform.io/f/b1c5c543-e467-487e-b239-a9a30835fda0" method="POST"  >
-  <ul class="flex-outer">
-  <li>
-  <div class="input-box-container-left">
-        <label for="first-name">First Name</label>
-        <input type="text" name="firstname" id="first-name" required="required"/> 
-  
-        </div>
-        <div class="input-box-container-right">
-        <label for="last-name">Last Name</label>
-        <input type="text" name="lastname"  id="last-name"  required="required"/>
-        </div>
-        </li>
-      
-        <li>
-        <div class="input-box-container-left">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required="required"/>
-        </div>
-        <div class="input-box-container-right">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" required="required" name="phone" />
-        </div>
-      </li>
-      <li>
-      <div class="text-area-container">
 
-        <label for="comments">Comments</label>
-        <textarea rows="6" name="message" id="message" required="required" ></textarea>
-        </div>
-      </li>
-    
-      <li>
-        <div class="center">
-         {/* <NavigationButton
-      label={'Submit'}
-      alignment={'center'} 
-      /> */}
-      <button type="submit">Send</button>
-        </div>
-      
-    
-      </li>
-    </ul>
-  </form>
-</div>
+            <PageTopper title='Contact Me'/>
+
+            <FormStyles>
+           
+		<p>Send me a message by filling out the form below. You can also message me through <a href="https://twitter.com/kyjordev" target="_blank">Twitter</a> or <a href="https://www.instagram.com/kyjordev" target="_blank">Instagram</a>.</p>
+		<form action="https://formspree.io/f/xayleedk" method="POST">
+			<label>Email</label>
+			<input type="text" name="_replyto" required />
+			<label>Message</label>
+			<textarea rows="12" id="autoExpand" name="message" required></textarea>
+			<button type="submit" >Send message</button>
+		</form>
+</FormStyles>
           
         </>
     );
